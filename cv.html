@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Ruan Prinsloo</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0d0d1a 0%, #111827 50%, #0d1520 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    /* ===== CV CONTAINER ===== */
+    .cv-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative orbs */
+    .cv-container::before {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: rgba(139, 92, 246, 0.08);
+      border-radius: 50%;
+      filter: blur(80px);
+      top: -80px;
+      right: -80px;
+      pointer-events: none;
+    }
+
+    .cv-container::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(6, 182, 212, 0.06);
+      border-radius: 50%;
+      filter: blur(80px);
+      bottom: -60px;
+      left: -60px;
+      pointer-events: none;
+    }
+
+    /* ===== HEADER ===== */
+    .cv-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cv-name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.85));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cv-title {
+      font-size: 1.1rem;
+      color: #8b5cf6;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .cv-contact {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .cv-contact a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .cv-contact a:hover {
+      color: #8b5cf6;
+    }
+
+    /* ===== SECTIONS ===== */
+    .cv-section {
+      margin-bottom: 2.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cv-section-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #8b5cf6;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    /* ===== SUMMARY ===== */
+    .cv-summary {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* ===== SKILLS ===== */
+    .cv-skill-group {
+      margin-bottom: 1rem;
+    }
+
+    .cv-skill-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.4rem;
+    }
+
+    .cv-skill-list {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.6;
+    }
+
+    /* ===== CERTIFICATIONS ===== */
+    .cv-cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .cv-cert-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+
+    .cv-cert-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .cv-cert-provider {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* ===== EDUCATION ===== */
+    .cv-edu-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .cv-edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-edu-institution {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .cv-edu-qualification {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 0.2rem;
+    }
+
+    .cv-edu-status {
+      font-size: 0.8rem;
+      color: #8b5cf6;
+      font-weight: 500;
+      margin-top: 0.15rem;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .cv-exp-item {
+      margin-bottom: 1.75rem;
+    }
+
+    .cv-exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cv-exp-role {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .cv-exp-date {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 500;
+    }
+
+    .cv-exp-company {
+      font-size: 0.9rem;
+      color: #8b5cf6;
+      margin-bottom: 0.75rem;
+    }
+
+    .cv-exp-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cv-exp-list li {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      padding-left: 1.25rem;
+      position: relative;
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-exp-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: rgba(139, 92, 246, 0.6);
+    }
+
+    /* ===== ACTIONS ===== */
+    .cv-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cv-btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cv-btn-primary {
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: #ffffff;
+    }
+
+    .cv-btn-primary:hover {
+      background: rgba(139, 92, 246, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+    }
+
+    .cv-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .cv-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    /* ===== PRINT STYLES ===== */
+    @media print {
+      body {
+        background: #ffffff;
+        color: #1a1a1a;
+        padding: 0;
+      }
+
+      .cv-container {
+        background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        box-shadow: none;
+        padding: 2rem;
+        border-radius: 0;
+      }
+
+      .cv-container::before,
+      .cv-container::after {
+        display: none;
+      }
+
+      .cv-name {
+        -webkit-text-fill-color: #1a1a1a;
+        background: none;
+      }
+
+      .cv-title {
+        color: #5b21b6;
+      }
+
+      .cv-contact, .cv-contact a {
+        color: #555;
+      }
+
+      .cv-section-title {
+        color: #5b21b6;
+        border-bottom-color: #e5e7eb;
+      }
+
+      .cv-summary,
+      .cv-skill-list,
+      .cv-edu-qualification,
+      .cv-exp-list li {
+        color: #374151;
+      }
+
+      .cv-skill-label,
+      .cv-edu-institution,
+      .cv-exp-role,
+      .cv-cert-name {
+        color: #1a1a1a;
+      }
+
+      .cv-exp-company,
+      .cv-edu-status {
+        color: #5b21b6;
+      }
+
+      .cv-exp-date,
+      .cv-cert-provider {
+        color: #6b7280;
+      }
+
+      .cv-cert-item {
+        background: #f9fafb;
+        border-color: #e5e7eb;
+      }
+
+      .cv-exp-list li::before {
+        color: #5b21b6;
+      }
+
+      .cv-actions {
+        display: none;
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 800px) {
+      .cv-cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cv-contact {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 1rem;
+      }
+
+      .cv-container {
+        padding: 2rem 1.5rem;
+      }
+
+      .cv-name {
+        font-size: 2rem;
+      }
+
+      .cv-exp-header {
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-container">
+    <!-- Header -->
+    <header class="cv-header">
+      <h1 class="cv-name">Ruan Prinsloo</h1>
+      <p class="cv-title">Software Developer &amp; Technical Specialist</p>
+      <div class="cv-contact">
+        <span>📧 <a href="mailto:rchristopherprinsloo18@gmail.com">rchristopherprinsloo18@gmail.com</a></span>
+        <span>💻 <a href="https://github.com/Ruopa0" target="_blank">github.com/Ruopa0</a></span>
+        <span>🌐 <a href="https://ruopa0.github.io/Portfolio" target="_blank">ruopa0.github.io/Portfolio</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Professional Summary</h2>
+      <p class="cv-summary">
+        Technologically wired professional with a blend of software development and hands-on technical expertise. 
+        Experienced in diagnosing and repairing machine faults, quality control processes, and building software 
+        solutions across multiple programming languages. Holds Cisco Networking Academy certifications in networking 
+        and Linux systems, with a strong foundation in IT support and troubleshooting. Currently furthering studies 
+        at the University of Waikato.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Technical Skills</h2>
+      <div class="cv-skill-group">
+        <p class="cv-skill-label">Programming Languages</p>
+        <p class="cv-skill-list">C# · Java · JavaScript · PHP · Python · Rust · SQL · MATLAB</p>
+      </div>
+      <div class="cv-skill-group">
+        <p class="cv-skill-label">Networking &amp; Systems</p>
+        <p class="cv-skill-list">Cisco Networking (CCNA) · IT Infrastructure · Linux Administration · Network Troubleshooting</p>
+      </div>
+      <div class="cv-skill-group">
+        <p class="cv-skill-label">Technical &amp; Hardware</p>
+        <p class="cv-skill-list">Machine Diagnostics &amp; Repair · Hardware Assembly · Equipment Troubleshooting · Quality Control · Preventative Maintenance</p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Certifications</h2>
+      <div class="cv-cert-grid">
+        <div class="cv-cert-item">
+          <p class="cv-cert-name">CCNA Introduction to Networks</p>
+          <p class="cv-cert-provider">Cisco Networking Academy</p>
+        </div>
+        <div class="cv-cert-item">
+          <p class="cv-cert-name">IT Essentials</p>
+          <p class="cv-cert-provider">Cisco Networking Academy</p>
+        </div>
+        <div class="cv-cert-item">
+          <p class="cv-cert-name">Linux Essentials</p>
+          <p class="cv-cert-provider">Cisco Networking Academy</p>
+        </div>
+        <div class="cv-cert-item">
+          <p class="cv-cert-name">Linux Unhatched</p>
+          <p class="cv-cert-provider">Cisco Networking Academy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Education</h2>
+      <div class="cv-edu-item">
+        <p class="cv-edu-institution">University of Waikato</p>
+        <p class="cv-edu-qualification">Furthering studies in technology and computing</p>
+        <p class="cv-edu-status">Currently Studying</p>
+      </div>
+      <div class="cv-edu-item">
+        <p class="cv-edu-institution">Wintec (Waikato Institute of Technology)</p>
+        <p class="cv-edu-qualification">New Zealand Diploma in Information Technology Technical Support</p>
+      </div>
+      <div class="cv-edu-item">
+        <p class="cv-edu-institution">Wintec (Waikato Institute of Technology)</p>
+        <p class="cv-edu-qualification">New Zealand Certificate in Information Technology (Level 5)</p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="cv-section">
+      <h2 class="cv-section-title">Experience</h2>
+      <div class="cv-exp-item">
+        <div class="cv-exp-header">
+          <h3 class="cv-exp-role">Multi-Role Operator</h3>
+          <span class="cv-exp-date">Jun 2023 – Feb 2024</span>
+        </div>
+        <p class="cv-exp-company">Greengrower</p>
+        <ul class="cv-exp-list">
+          <li>Diagnosed and repaired machine faults to minimise downtime and maintain production flow</li>
+          <li>Conducted quality control checks to ensure product standards were consistently met</li>
+          <li>Operated harvesting equipment and managed crop processing workflows</li>
+          <li>Performed regular cleaning and maintenance of equipment and trays</li>
+          <li>Adapted across multiple roles as needed, demonstrating versatility and reliability</li>
+        </ul>
+      </div>
+      <div class="cv-exp-item">
+        <div class="cv-exp-header">
+          <h3 class="cv-exp-role">Production Operator</h3>
+          <span class="cv-exp-date">Aug 2022</span>
+        </div>
+        <p class="cv-exp-company">APL</p>
+        <ul class="cv-exp-list">
+          <li>Operated production equipment in a manufacturing environment</li>
+          <li>Pressed rubber into moulds following precise specifications and safety procedures</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- Actions (hidden when printing) -->
+    <div class="cv-actions">
+      <button class="cv-btn cv-btn-primary" onclick="window.print()">Print / Save as PDF</button>
+      <a href="index.html" class="cv-btn cv-btn-secondary">Back to Portfolio</a>
+    </div>
+  </div>
+
+</body>
+</html>

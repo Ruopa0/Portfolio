@@ -54,10 +54,11 @@
       <h2 class="section-title animate-fade-in">About Me</h2>
       <div class="glass-card about-card animate-fade-in tilt-card">
         <p class="about-text">
-          I'm technologically wired, with experience spanning software engineering, networking, and hardware systems. 
-          From writing clean, efficient code to diagnosing network faults and assembling machine components, 
-          I bring a hands-on, problem-solving approach to every challenge. With Cisco Networking Academy certifications 
-          and a solid foundation in systems-level and web development, I am well equipped for software solutions as well 
+          I'm technologically wired, with experience spanning software engineering, networking, and hardware systems.
+          From building a modular game engine in Rust to diagnosing network faults and assembling machine components,
+          I bring a hands-on, problem-solving approach to every challenge. I leverage AI-assisted development tools
+          like Claude and Cursor to accelerate my workflow, and hold Cisco Networking Academy certifications with a
+          solid foundation in systems-level and web development. I am well equipped for software solutions as well
           as working with hardware.
         </p>
         <p class="about-status">
@@ -154,32 +155,122 @@
     </div>
   </section>
 
-  <!-- ===== PROJECTS SECTION ===== -->
+  <!-- ===== FEATURED PROJECT ===== -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title animate-fade-in">Featured Projects</h2>
-      
-      <div class="projects-grid">
-        <!-- code_blue Game Engine -->
-        <div class="glass-card project-card tilt-card animate-fade-in">
-          <div class="project-content">
-            <div class="project-header">
-              <h3 class="project-title">code_blue Game Engine</h3>
-              <div class="project-links">
-                <a href="https://github.com/Ruopa0/code_blue" target="_blank" title="View Source"><i class="devicon-github-original"></i></a>
-              </div>
-            </div>
-            <p class="project-desc">A modular Entity Component System (ECS) game engine built in Rust using Bevy. Features integrated multiplayer netcode (Lightyear), physics simulation (Avian3D), robust character animation (Tnua), and AI pathfinding. Demonstrates advanced systems architecture and performance optimization.</p>
-            <div class="project-tags">
-              <span class="tag">Rust</span>
-              <span class="tag">Bevy ECS</span>
-              <span class="tag">Lightyear</span>
-              <span class="tag">Avian3D</span>
-            </div>
+      <h2 class="section-title animate-fade-in">Featured Project</h2>
+
+      <!-- Engine Showcase Card -->
+      <div class="glass-card engine-showcase animate-fade-in">
+
+        <!-- Header -->
+        <div class="engine-header">
+          <div class="engine-title-block">
+            <h3 class="engine-name">code_blue</h3>
+            <p class="engine-subtitle">Modular Game Engine</p>
+          </div>
+          <a href="https://github.com/Ruopa0/code_blue" target="_blank" class="engine-github-btn">
+            <i class="devicon-github-original"></i> View Source
+          </a>
+        </div>
+
+        <p class="engine-desc">
+          A full-featured multiplayer game engine built from scratch in Rust. Featuring 13 modular crates,
+          real-time collaborative editing, 120Hz UDP netcode, hot-reloadable scripting, and FPS-grade weapon
+          physics — spanning approximately 20,000 lines of systems-level code.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="engine-stats">
+          <div class="engine-stat">
+            <span class="stat-value">13</span>
+            <span class="stat-label">Modular Crates</span>
+          </div>
+          <div class="engine-stat">
+            <span class="stat-value">~20k</span>
+            <span class="stat-label">Lines of Rust</span>
+          </div>
+          <div class="engine-stat">
+            <span class="stat-value">120Hz</span>
+            <span class="stat-label">UDP Netcode</span>
+          </div>
+          <div class="engine-stat">
+            <span class="stat-value">Bevy 0.18</span>
+            <span class="stat-label">ECS Foundation</span>
           </div>
         </div>
-      </div>
 
+        <!-- Feature Grid -->
+        <div class="engine-features">
+          <div class="engine-feature glass-card tilt-card">
+            <div class="feature-icon">🌐</div>
+            <h4>Multiplayer Netcode</h4>
+            <p>Lightyear-powered 120Hz UDP replication with snapshot interpolation and authoritative server reconciliation.</p>
+          </div>
+          <div class="engine-feature glass-card tilt-card">
+            <div class="feature-icon">🎮</div>
+            <h4>Collaborative Editor</h4>
+            <p>Real-time multi-user 3D scene editor with live object locking, presence indicators, and shared viewports via Egui.</p>
+          </div>
+          <div class="engine-feature glass-card tilt-card">
+            <div class="feature-icon">⚡</div>
+            <h4>Hot-Reload Scripting</h4>
+            <p>Embedded Rhai scripting runtime with AST caching and file-watch hot-reloading — no engine restart required.</p>
+          </div>
+          <div class="engine-feature glass-card tilt-card">
+            <div class="feature-icon">🔫</div>
+            <h4>FPS Weapon Systems</h4>
+            <p>Deterministic recoil patterns, bloom and spread modelling, hitscan ballistics, and viewmodel inertia sway.</p>
+          </div>
+          <div class="engine-feature glass-card tilt-card">
+            <div class="feature-icon">💥</div>
+            <h4>Physics Simulation</h4>
+            <p>Avian3D rigid-body physics with custom collision layers and surface tags for wall-running and ledge mechanics.</p>
+          </div>
+          <div class="engine-feature glass-card tilt-card">
+            <div class="feature-icon">🏃</div>
+            <h4>Character Controller</h4>
+            <p>Tnua kinematic controller with finite state machine locomotion — jumping, sprinting, crouching, and sliding.</p>
+          </div>
+        </div>
+
+        <!-- Architecture Map -->
+        <div class="engine-section">
+          <h4 class="engine-section-title">Architecture — 13 Crate Workspace</h4>
+          <div class="architecture-grid">
+            <div class="arch-item"><span class="arch-crate">cb_engine</span><span class="arch-desc">Core &amp; Scheduling</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_editor</span><span class="arch-desc">Collaborative Editor</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_game</span><span class="arch-desc">FPS Client</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_server</span><span class="arch-desc">Dedicated Server</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_netcode</span><span class="arch-desc">UDP Replication</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_physics</span><span class="arch-desc">Physics Layer</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_movement</span><span class="arch-desc">Character FSM</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_weapons</span><span class="arch-desc">Weapon Systems</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_input</span><span class="arch-desc">Input Mapping</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_world</span><span class="arch-desc">Environment</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_renderer</span><span class="arch-desc">Graphics</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_audio</span><span class="arch-desc">Sound</span></div>
+            <div class="arch-item"><span class="arch-crate">cb_ai</span><span class="arch-desc">AI Systems</span></div>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="engine-section">
+          <h4 class="engine-section-title">Tech Stack</h4>
+          <div class="project-tags engine-tags">
+            <span class="tag">Rust</span>
+            <span class="tag">Bevy 0.18</span>
+            <span class="tag">Lightyear</span>
+            <span class="tag">Avian3D</span>
+            <span class="tag">Tnua</span>
+            <span class="tag">Rhai</span>
+            <span class="tag">bevy_egui</span>
+            <span class="tag">UDP</span>
+            <span class="tag">ECS</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 

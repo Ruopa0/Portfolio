@@ -23,6 +23,23 @@ Cisco Networking (CCNA) · IT Infrastructure · Linux Administration · Network 
 **Technical & Hardware**
 Machine Diagnostics & Repair · Hardware Assembly · Equipment Troubleshooting · Quality Control · Preventative Maintenance
 
+**AI Tooling**
+Claude · Cursor · AI-Assisted Development Workflows
+
+---
+
+## Software Projects
+
+### code_blue — Modular Game Engine
+**Rust · Bevy 0.18 · Lightyear · Avian3D · Rhai** | [github.com/Ruopa0/code_blue](https://github.com/Ruopa0/code_blue)
+
+- Architected a 13-crate Rust workspace implementing a full ECS game engine (~20,000 LOC)
+- Built a real-time collaborative multi-user 3D editor with object locking and presence sync over UDP
+- Implemented 120Hz UDP netcode using Lightyear with snapshot interpolation and server authority
+- Developed an embedded Rhai scripting engine with AST caching and file-watch hot-reloading
+- Engineered FPS weapon systems with deterministic recoil, hitscan ballistics, and viewmodel inertia
+- Integrated Avian3D physics with custom collision layers and kinematic character controller (Tnua)
+
 ---
 
 ## Certifications

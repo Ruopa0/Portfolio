@@ -30,7 +30,7 @@ Claude · Cursor · AI-Assisted Development Workflows
 
 ## Software Projects
 
-### code_blue — Modular Game Engine
+### Code Blue — Modular Game Engine
 **Rust · Bevy 0.18 · Lightyear · Avian3D · Rhai** | [github.com/Ruopa0/code_blue](https://github.com/Ruopa0/code_blue)
 
 - Architected a 13-crate Rust workspace implementing a full ECS game engine (~20,000 LOC)

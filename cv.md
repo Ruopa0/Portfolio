@@ -8,7 +8,7 @@
 
 ## Professional Summary
 
-Technologically wired professional with a blend of software development and hands-on technical expertise. Experienced in diagnosing and repairing machine faults, quality control processes, and building software solutions across multiple programming languages. Holds Cisco Networking Academy certifications in networking and Linux systems, with a strong foundation in IT support and troubleshooting. Currently furthering studies at the University of Waikato.
+Technologically wired professional with a blend of software development and hands-on technical expertise. Experienced in diagnosing and repairing machine faults, quality control processes, and building software solutions across multiple programming languages. Holds Cisco Networking Academy certifications in networking and Linux systems, with a strong foundation in IT support and troubleshooting.
 
 ---
 
@@ -54,9 +54,6 @@ Claude · Cursor · AI-Assisted Development Workflows
 ---
 
 ## Education
-
-**University of Waikato** — Currently Studying
-Furthering studies in technology and computing
 
 **Wintec (Waikato Institute of Technology)**
 New Zealand Diploma in Information Technology Technical Support

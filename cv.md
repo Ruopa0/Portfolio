@@ -65,6 +65,14 @@ New Zealand Certificate in Information Technology (Level 5)
 
 ## Experience
 
+### Technical Support & Operations Volunteer — Waikato Esports Club
+**4 Months (Every 2nd Day Commitment)**
+
+- Delivered front-line customer service and user support to club members, newcomers, and visitors
+- Troubleshot PC hardware, peripheral conflicts, display dropouts, and audio/mic issues under live tournament conditions
+- Assembled, cabled, and networked gaming workstations and network switches, managing teardown and asset packing
+- Maintained an inclusive, welcoming community environment, de-escalating high-pressure competitive tensions
+
 ### Multi-Role Operator — Greengrower
 **Jun 2023 – Feb 2024**
 
